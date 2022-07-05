@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "8ba71ec9-a172-4909-be67-404b578122df",
+		"name": "notifications-api-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12565920"
+	},
+	"item": [
+		{
+			"name": "get-notifications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/notifications-api/get-notifications?page=1&limit=99999&isBatch=true",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"notifications-api",
+						"get-notifications"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"description": "Current page of results. default is 1"
+						},
+						{
+							"key": "limit",
+							"value": "99999",
+							"description": "How many results per page. default is 10"
+						},
+						{
+							"key": "order",
+							"value": "asc",
+							"description": "asc or desc by created_at. default is desc",
+							"disabled": true
+						},
+						{
+							"key": "createdDate",
+							"value": "2022-04-19",
+							"description": "created_at / lower range of date. Format: YYYY-MM-DD",
+							"disabled": true
+						},
+						{
+							"key": "toDate",
+							"value": "2022-06-05",
+							"description": "Upper range of date: Format: YYYY-MM-DD",
+							"disabled": true
+						},
+						{
+							"key": "read",
+							"value": "true",
+							"description": "true or false",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "fdfe2ecd-76cb-4a9e-9710-c86ac58bebdd",
+							"disabled": true
+						},
+						{
+							"key": "client_id",
+							"value": "325d4514-5144-47a0-9eb9-f2747fb93666",
+							"disabled": true
+						},
+						{
+							"key": "isBatch",
+							"value": "true"
+						},
+						{
+							"key": "batch_id",
+							"value": "9ae6a389-9937-4757-ab78-ceb18704a0f0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "toggle",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": [\"ad7e9958-2fa1-448a-b3ed-da78c7ce6e7f\",\"ad7e9958-2fa1-448a-b3ed-da78c7ce6e7f\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/notifications-api/toggle",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"notifications-api",
+						"toggle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "soft-delete",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": [\n        \"3078507e-f75c-48a5-a076-5bb17c7d5853\",\n        \"3078507e-f75c-48a5-a076-5bb17c7d5853\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/notifications-api/soft-delete",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"notifications-api",
+						"soft-delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-notifications-by-batch",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwidXNlcl9pZCI6IjczZWRlNzU4LWU0ZDAtNDNlYS04NmM2LWM2YzM4Y2UxZDk4MyIsInVzZXJfdHlwZSI6IlJlcXVlc3RvciIsImlhdCI6MTY1NDgzMzAxNiwiZXhwIjoxNjYzNDczMDE2fQ.qe3zLatWkFXYY6RW3ETrOb2xrVSyY321oTpbf3fTOFQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_ids\": [\n        \"ad59aca3-38c1-45b6-af14-d5a8da52adcc\"\n    ],\n    \"data\": {\n        \"test\": \"test\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/notifications-api/save-notifications-by-batch",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"notifications-api",
+						"save-notifications-by-batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-notifications",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"client_id\": \"ad59aca3-38c1-45b6-af14-d5a8da52adcc\",\n    \"data\": {\n        \"test\": \"test\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/notifications-api/save-notifications",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"notifications-api",
+						"save-notifications"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "13.214.250.59",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "3005",
+			"type": "string"
+		}
+	]
+}

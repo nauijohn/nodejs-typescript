@@ -1,0 +1,24 @@
+module.exports = {
+    parserOptions: {
+        ecmaVersion: 6,
+        sourceType: "module",
+        ecmaFeatures: {
+            jsx: true
+        }
+    },
+    parser: "@typescript-eslint/parser",
+    plugins: ["@typescript-eslint"],
+    extends: [
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "prettier/@typescript-eslint"
+    ],
+    rules: {
+        "@typescipt-eslint/interface-name-prefix": ["always"],
+        "no-underscore-dangle": "error",
+        "@typescript-eslint/no-explicit-any": "off"
+    }
+};

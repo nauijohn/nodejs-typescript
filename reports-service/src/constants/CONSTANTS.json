@@ -1,0 +1,156 @@
+{
+    "CONFIG": {
+        "DEFAULT": {
+            "PORT": 3000,
+            "DEVELOPMENT": "development"
+        },
+        "AWS": {
+            "REGIONS": {
+                "SINGAPORE": "AWS.region.singapore"
+            },
+            "API_VERSION": {
+                "SQS": "AWS.apiVersion.sqs",
+                "DYNAMODB": "AWS.apiVersion.dynamoDb"
+            }
+        },
+        "CACHE": {
+            "TTL": "CACHE.TTL"
+        }
+    },
+    "ROUTES": {
+        "API": "/api",
+        "REPORTS_SERVICE": "/reports-service",
+        "FINANCE_REPORTS": "/finance-reports"
+    },
+    "CONTROLLERS": {
+        "DYNAMODB": {
+            "GET_ALL": "/get-all"
+        },
+        "REPORTS": {
+            "TICKET_COUNT_HISTORY": "/ticket-count-history",
+            "TICKETS_ASSIGNED_PER_RIDER": "/tickets-assigned-per-rider",
+            "ORIGIN_VS_DESTINATION_VOLUME": "/origin-vs-destination-volume",
+            "DATE_RANGE_MONTHLY": "/date-range-monthly",
+            "DAILY_DATE_RANGE": "/daily-date-range",
+            "PER_CATEGORY_DAILY": "/per-category-daily",
+            "MONTHLY_PERFORMANCE": "/monthly-performance",
+            "DAILY_PERFORMANCE": "/daily-performance"
+        }
+    },
+    "DYNAMODB": {
+        "TABLES": {
+            "OLDDEV_BRAD_REQUESTS": "olddev_brad_requests",
+            "ABSI_AGGREGATED_DATA_PER_DAY": "absi_aggregated_data_per_day"
+        },
+        "ERRORS": {
+            "RESOURCE_IN_USER_EXCEPTION": "ResourceInUseException"
+        },
+        "DEFAULTS": {
+            "CREATE": {
+                "READ_CAPACITY_UNITS": 1,
+                "WRITE_CAPACITY_UNITS": 1
+            }
+        },
+        "OLDDEV_BRAD_REQUESTS_TABLE": {
+            "STATUS": {
+                "COMPLETED": "Completed",
+                "IN_PROGRESS": "In Progress",
+                "DELAYED": "Delayed",
+                "CANCELLED": "Cancelled",
+                "PENDING": "Pending",
+                "AWAITING_PEER": "Awaiting Peer",
+                "PEER_ASSIGNED": "Peer Assigned",
+                "OTW_TO_STORE": "OTW To Store",
+                "ORDER_PLACED": "Order Placed",
+                "FOR_PAYMENT": "For Payment",
+                "PAID": "Paid",
+                "FOR_DELIVERY": "For Delivery"
+            },
+            "KEYS": {
+                "PEER_ASSIGNED": "peerAssigned",
+                "ACTUAL_DELIVERY_DATE": "actualDeliveryDate",
+                "DELIVERY_DATE": "deliveryDate",
+                "STATUS": "status",
+                "PICK_UP_ADDRESS": "pickupAddress",
+                "DROP_OFF_ADDRESS": "dropoffAddress",
+                "CREATED_AT": "createdAt",
+                "SERVICE_TYPE": "serviceType",
+                "CATEGORY": "category"
+            },
+            "SERVICE_TYPES": {
+                "PARCEL_DELIVERY": "parcel delivery",
+                "MESSENGERIAL": "messengerial",
+                "FOOD_ORDER": "food order",
+                "BANK_DEPOSIT": "bank deposit",
+                "PARCEL": "parcel",
+                "FOOD": "food",
+                "PHARMACY": "pharmacy",
+                "LAUNDRY": "laundry",
+                "PRIVATE_DOCUMENT": "private document",
+                "OTHER_ASSIST": "others assist",
+                "BILLS_PAYMENT": "bills payment",
+                "GOVERNMENT_DOCUMENTS": "government documents",
+                "CONTRACTS": "contracts",
+                "OTHERS": "others"
+            }
+        },
+        "ABSI_AGGREGATED_DATE_PER_DAY": {
+            "KEYS": {
+                "DISPATCH_DATE": "dispatchDate",
+                "CATEGORY_DISPATCH_DATES": "categoryDispatchDates",
+                "LOCATIONS": "locations",
+                "PEERS_ASSIGNED": "peersAssigned",
+                "SERVICE_TYPE_DISPATCH_DATES": "serviceTypeDispatchDates",
+                "TOTAL": "total",
+                "COMPLETED": "completed",
+                "CANCELLED": "cancelled",
+                "PENDING": "pending",
+                "IN_PROGRESS": "in_progress",
+                "DELAYED": "delayed",
+                "UPDATED_AT": "updated_at"
+            },
+            "NOT_YET_DISPATCHED": "Not yet dispatched",
+            "ALL_TIME": "ALL TIME",
+            "UPDATE_EXPRESSION": "SET #total = :total, #completed = :completed, #cancelled = :cancelled, #delayed = :delayed, #in_progress = :in_progress, #updated_at = :updated_at, #pending = :pending, #peersAssigned = :peersAssigned, #serviceTypeDispatchDates = :serviceTypeDispatchDates, #locations = :locations, #categoryDispatchDates = :categoryDispatchDates"
+        }
+    },
+    "STATUS_CODES": {
+        "SUCCESSFUL_RESPONSE": {
+            "OK": 200,
+            "CREATED": 201
+        },
+        "CLIENT_ERROR_RESPONSE": {
+            "BAD_REQUEST": 400,
+            "NOT_FOUND": 404,
+            "CONFLICT": 409
+        },
+        "SERVER_ERROR_RESPONSE": {
+            "INTERNAL_SERVER_ERROR": 500
+        }
+    },
+    "FORMATS": {
+        "TIME": {
+            "MMDDYYYY": "MMDDYYYY",
+            "MMYYYY": "MMYYYY",
+            "DDYYYY": "DDYYYY",
+            "MMDD": "MMDD",
+            "MM": "MM",
+            "DD": "DD",
+            "YYYY": "YYYY"
+        }
+    },
+    "MONTHS": {
+        "JAN": "Jan",
+        "FEB": "Feb",
+        "MAR": "Mar",
+        "APR": "Apr",
+        "MAY": "May",
+        "JUN": "Jun",
+        "JUL": "Jul",
+        "AUG": "Aug",
+        "SEP": "Sep",
+        "OCT": "Oct",
+        "NOV": "Nov",
+        "DEC": "Dec"
+    }
+}

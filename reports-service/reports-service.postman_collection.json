@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "347cc785-4e55-4d07-9c7f-5f0f829a7125",
+		"name": "reports-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12565920"
+	},
+	"item": [
+		{
+			"name": "origin-vs-destination-volume",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/reports-service/origin-vs-destination-volume",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"reports-service",
+						"origin-vs-destination-volume"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "",
+							"description": "month filter, [1-12], default is null",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "",
+							"description": "date filter, [1-31], default is null",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "",
+							"description": "year filter, YYYY, default is null",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ticket-count-history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/reports-service/ticket-count-history",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"reports-service",
+						"ticket-count-history"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "",
+							"description": "current page, default is 1",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "",
+							"description": "limit per page, default is 10",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "",
+							"description": "order by dispatchDate, default is desc",
+							"disabled": true
+						},
+						{
+							"key": "month",
+							"value": "",
+							"description": "month filter, [1-12], default is null",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "",
+							"description": "date filter, [1-31], default is null",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "",
+							"description": "year filter, YYYY, default is null",
+							"disabled": true
+						},
+						{
+							"key": "serviceType",
+							"value": "",
+							"description": "serviceType filter",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tickets-assigned-per-rider",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/reports-service/tickets-assigned-per-rider",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"reports-service",
+						"tickets-assigned-per-rider"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "",
+							"description": "month filter [1-12], default is null",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "",
+							"description": "date filter, [1-31], default is null",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "",
+							"description": "year fitler, YYYY, default is null",
+							"disabled": true
+						},
+						{
+							"key": "peerAssigned",
+							"value": "",
+							"description": "rider name",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "",
+							"description": "page, default is 1",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "",
+							"description": "limit, default is 10",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "monthly-performance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/reports-service/monthly-performance",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"reports-service",
+						"monthly-performance"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "",
+							"description": "month filter, [1-12], default is null",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "",
+							"description": "year filter, YYYY, default is null",
+							"disabled": true
+						},
+						{
+							"key": "toMonth",
+							"value": "",
+							"description": "optional, upper range of month filter, [1-12], default is null",
+							"disabled": true
+						},
+						{
+							"key": "toYear",
+							"value": "",
+							"description": "optional, upper range of year filter, YYYY, default is null",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "",
+							"description": "[asc, desc] default is asc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "daily-performance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}:{{port}}/reports-service/daily-performance",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"reports-service",
+						"daily-performance"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "",
+							"description": "month filter, [1-12], default is null",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "",
+							"description": "date filter, [1-31], default is null",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "",
+							"description": "year filter YYYY, default is null",
+							"disabled": true
+						},
+						{
+							"key": "toMonth",
+							"value": "",
+							"description": "optional, upper range of month filter, default is null",
+							"disabled": true
+						},
+						{
+							"key": "toDate",
+							"value": "",
+							"description": "optional, upper range of date filter, default is null",
+							"disabled": true
+						},
+						{
+							"key": "toYear",
+							"value": "",
+							"description": "optional, upper range of year filter, default is null",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "",
+							"description": "[corporate, personal], leave blank if all",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "13.214.250.59",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "3001",
+			"type": "string"
+		}
+	]
+}
